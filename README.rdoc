@@ -18,4 +18,4 @@ Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to pre-con
 == Getting Started
 
   rake db:migrate
-  ruby main.rb
+  ruby application.rb
