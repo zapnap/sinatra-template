@@ -25,3 +25,20 @@ namespace :db do
     DataMapper.auto_upgrade!
   end
 end
+
+namespace :twitter do
+  desc 'Update the local status cache'
+  task :update do
+    count = Status.update
+    puts "#{count} new status updates retrieved"
+  end
+end
+
+namespace :gems do
+  desc 'Install required gems'
+  task :install do
+    required_gems = %w{ sinatra rspec dm-core dm-validations
+                        dm-aggregates haml }
+    required_gems.each { |required_gem| system "sudo gem install #{required_gem}" }
+  end
+end
