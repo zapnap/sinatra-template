@@ -26,14 +26,6 @@ namespace :db do
   end
 end
 
-namespace :twitter do
-  desc 'Update the local status cache'
-  task :update do
-    count = Status.update
-    puts "#{count} new status updates retrieved"
-  end
-end
-
 namespace :gems do
   desc 'Install required gems'
   task :install do
