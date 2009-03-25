@@ -8,8 +8,7 @@ end
 
 error do
   e = request.env['sinatra.error']
-  puts e.to_s
-  puts e.backtrace.join('\n')
+  Kernel.puts e.backtrace.join("\n")
   'Application error'
 end
 
