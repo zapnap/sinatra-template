@@ -1,12 +1,15 @@
 require "#{File.dirname(__FILE__)}/spec_helper"
 
 describe 'main application' do
-  include Sinatra::Test
+  include Rack::Test::Methods
+
+  def app
+    Sinatra::Application.new
+  end
 
   specify 'should show the default index page' do
     get '/'
-    @response.should be_ok
-    @response.body.should match(/Main Page/)
+    last_response.should be_ok
   end
 
   specify 'should have more specs' do

@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 require 'spec'
 require 'spec/interop/test'
-require 'sinatra/test'
+require 'rack/test'
 
 # set test environment
 set :environment, :test
