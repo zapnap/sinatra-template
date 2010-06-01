@@ -1,0 +1,3 @@
+datamapper -v 0.10.2
+sinatra -v 1.0
+
