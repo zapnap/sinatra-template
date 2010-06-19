@@ -7,5 +7,5 @@ class Profile
   property :created_at, DateTime
   property :updated_at, DateTime
 
-  validates_present :name
+  validates_presence_of :name
 end
