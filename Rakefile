@@ -1,15 +1,17 @@
-require 'spec/rake/spectask'
+require 'rubygems'
+require 'bundler/setup'
+require 'rspec/core/rake_task'
 
 task :default => :test
 task :test => :spec
 
-if !defined?(Spec)
+if !defined?(RSpec)
   puts "spec targets require RSpec"
 else
   desc "Run all examples"
-  Spec::Rake::SpecTask.new('spec') do |t|
-    t.spec_files = FileList['spec/**/*.rb']
-    t.spec_opts = ['-cfs']
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.pattern = 'spec/**/*.rb'
+    t.rspec_opts = ['-cfs']
   end
 end
 
@@ -25,6 +27,7 @@ namespace :db do
   end
 end
 
+# Since bundler is being used this is no longer needed but kept if anyone (you zapnap!) wants that instead. :)
 namespace :gems do
   desc 'Install required gems'
   task :install do
@@ -34,5 +37,5 @@ namespace :gems do
 end
 
 task :environment do
-  require 'environment'
+  require_relative 'environment'
 end
