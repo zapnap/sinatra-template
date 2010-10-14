@@ -1,0 +1,5 @@
+[2010-10-14 22:35:38] INFO  WEBrick 1.3.1
+[2010-10-14 22:35:38] INFO  ruby 1.9.2 (2010-08-18) [i686-linux]
+[2010-10-14 22:35:38] INFO  WEBrick::HTTPServer#start: pid=30426 port=9292
+[2010-10-14 22:38:04] INFO  going to shutdown ...
+[2010-10-14 22:38:04] INFO  WEBrick::HTTPServer#start done.
