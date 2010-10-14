@@ -1,0 +1,44 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.2)
+    diff-lcs (1.1.2)
+    dm-aggregates (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-core (1.0.2)
+      addressable (~> 2.2)
+      extlib (~> 0.9.15)
+    dm-migrations (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-timestamps (1.0.2)
+      dm-core (~> 1.0.2)
+    dm-validations (1.0.2)
+      dm-core (~> 1.0.2)
+    extlib (0.9.15)
+    haml (3.0.21)
+    rack (1.2.1)
+    rspec (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+      rspec-mocks (= 2.0.0)
+    rspec-core (2.0.0)
+    rspec-expectations (2.0.0)
+      diff-lcs (>= 1.1.2)
+    rspec-mocks (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+    sinatra (1.0)
+      rack (>= 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dm-aggregates
+  dm-core
+  dm-migrations
+  dm-timestamps
+  dm-validations
+  haml
+  rspec
+  sinatra (>= 1.0)
