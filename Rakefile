@@ -1,3 +1,5 @@
+require 'rubygems'
+require 'bundler/setup'
 require 'spec/rake/spectask'
 
 task :default => :test
