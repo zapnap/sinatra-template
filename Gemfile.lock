@@ -25,6 +25,7 @@ GEM
     do_sqlite3 (0.10.2)
       data_objects (= 0.10.2)
     extlib (0.9.15)
+    fastthread (1.0.7)
     haml (3.0.21)
     rack (1.2.1)
     rspec (2.0.0)
@@ -39,6 +40,7 @@ GEM
       rspec-expectations (= 2.0.0)
     sinatra (1.0)
       rack (>= 1.0)
+    tilt (1.1)
 
 PLATFORMS
   ruby
@@ -50,6 +52,8 @@ DEPENDENCIES
   dm-sqlite-adapter
   dm-timestamps
   dm-validations
+  fastthread
   haml
   rspec
   sinatra (>= 1.0)
+  tilt
