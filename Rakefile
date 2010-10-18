@@ -37,5 +37,5 @@ namespace :gems do
 end
 
 task :environment do
-  require 'environment'
+  require_relative 'environment'
 end
