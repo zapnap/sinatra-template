@@ -1,2 +1,3 @@
 log/*
 .application.rb.swp
+.bundle/*
