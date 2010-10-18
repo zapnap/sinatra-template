@@ -1,7 +1,9 @@
 = Sinatra Application Template
 
 A base Sinatra application template. Just fork and build. Yay!
-Includes DataMapper, RSpec, and Haml, all ready to go.
+Includes DataMapper, RSpec 2.x, Bundler and Haml, all ready to go.
+
+Updated to work with Ruby 1.9.2 and RSpec 2.x
 
 == Configuration
 
@@ -16,6 +18,6 @@ Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to pre-con
   rake spec
 
 == Getting Started
-
+  bundle check / bundle install
   rake db:migrate
   ruby application.rb
