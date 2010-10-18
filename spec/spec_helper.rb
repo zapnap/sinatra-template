@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'rspec'
-require 'rspec/interop/test'
+#require 'rspec/interop/test'
 require 'rack/test'
 
 # set test environment
@@ -11,12 +11,13 @@ Sinatra::Base.set :run, false
 Sinatra::Base.set :raise_errors, true
 Sinatra::Base.set :logging, false
 
-require 'application'
+require File.join(File.dirname(__FILE__), '../application')
+#require_relative 'application'
 
 # establish in-memory database for testing
 DataMapper.setup(:default, "sqlite3::memory:")
 
-Spec::Runner.configure do |config|
-  # reset database before each example is run
-  config.before(:each) { DataMapper.auto_migrate! }
+Rspec.configure do |c|
+  c.before(:each) { DataMapper.auto_migrate! }
+  #c.mock_with :rspec
 end
