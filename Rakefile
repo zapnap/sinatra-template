@@ -27,6 +27,7 @@ namespace :db do
   end
 end
 
+# Since bundler is being used this is no longer needed but kept if anyone (you zapnap!) wants that instead. :)
 namespace :gems do
   desc 'Install required gems'
   task :install do
