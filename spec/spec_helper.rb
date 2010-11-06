@@ -1,8 +1,12 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
-require 'rspec'
-#require 'rspec/interop/test'
+if RUBY_VERSION && RUBY_VERSION =~ /1.9/ then
+  require 'rspec'
+else
+  require 'spec'
+  require 'spec/interop/test'
+end
 require 'rack/test'
 
 # set test environment
@@ -16,8 +20,16 @@ require File.join(File.dirname(__FILE__), '../application')
 
 # establish in-memory database for testing
 DataMapper.setup(:default, "sqlite3::memory:")
-
-Rspec.configure do |c|
-  c.before(:each) { DataMapper.auto_migrate! }
-  #c.mock_with :rspec
+if RUBY_VERSION && RUBY_VERSION =~ /1.9/ then
+  Rspec.configure do |c|
+    c.before(:each) { DataMapper.auto_migrate! }
+    #c.mock_with :rspec
+  end
+else
+  Spec::Runner.configure do |config|
+    # reset database before each example is run
+    config.before(:each) { DataMapper.auto_migrate! }
+  end
 end
+
+

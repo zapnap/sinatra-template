@@ -1,6 +1,7 @@
 source :rubygems
 gem "sinatra", ">=1.0"
-gem "rspec"
+gem "rspec",:platforms => :ruby_19
+gem "rspec", :require => 'spec', :platforms => :ruby_19
 gem "data_mapper"
 gem "rack-test"
 gem "dm-core"

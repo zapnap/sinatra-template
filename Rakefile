@@ -1,18 +1,25 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'rspec/core/rake_task'
+if RUBY_VERSION && RUBY_VERSION =~ /1.9/ then
+  require 'rspec/core/rake_task'
+else
+  require 'spec/rake/spectask'
+end
 
 task :default => :test
 task :test => :spec
-
-if !defined?(RSpec)
-  puts "spec targets require RSpec"
-else
+task :spec => :environment
+if defined?(RSpec)
   desc "Run all examples"
   RSpec::Core::RakeTask.new(:spec) do |t|
     t.pattern = 'spec/**/*.rb'
     t.rspec_opts = ['-cfs']
-  end
+elsif defined?(Spec)
+  desc "Run all examples" 	
+  Spec::Rake::SpecTask.new('spec') do |t|	 	
+    t.spec_files = FileList['spec/**/*.rb']	
+    t.spec_opts = ['-cfs']
+    end
 end
 
 namespace :db do
