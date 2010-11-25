@@ -3,6 +3,8 @@
 A base Sinatra application template. Just fork and build. Yay!
 Includes Bundler, DataMapper, RSpec2, and Haml, all ready to go.
 
+Works with both Ruby 1.8.7 and Ruby 1.9.2.
+
 == Configuration
 
 Dependencies and all configuration is done in <tt>environment.rb</tt>. Your database is also set up here. DataMapper will use sqlite3 by default. Tests use the sqlite3-memory adapter (no configuration needed).
