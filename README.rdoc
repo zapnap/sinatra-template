@@ -20,3 +20,13 @@ Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to pre-con
   bundle install
   rake db:migrate
   ruby application.rb
+
+== Thanks
+
+This project includes contributions from the following developers:
+
+  * garrensmith
+  * bryanwoods
+  * flexd
+
+(c) 2010 Nick Plante. This code is distributed under the MIT license.
