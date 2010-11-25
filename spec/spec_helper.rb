@@ -1,7 +1,7 @@
 require 'rubygems'
+require 'bundler/setup'
 require 'sinatra'
-require 'spec'
-require 'spec/interop/test'
+require 'rspec'
 require 'rack/test'
 
 # set test environment
@@ -15,7 +15,7 @@ require 'application'
 # establish in-memory database for testing
 DataMapper.setup(:default, "sqlite3::memory:")
 
-Spec::Runner.configure do |config|
+Rspec.configure do |config|
   # reset database before each example is run
   config.before(:each) { DataMapper.auto_migrate! }
 end
