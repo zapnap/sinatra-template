@@ -28,5 +28,5 @@ namespace :db do
 end
 
 task :environment do
-  require_relative 'environment'
+  require File.join(File.dirname(__FILE__), 'environment')
 end
