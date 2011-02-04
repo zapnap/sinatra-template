@@ -1,5 +1,6 @@
 require 'rubygems'
-require 'bundler/setup'
+require 'bundler'
+Bundler.setup(:default, :test)
 require 'sinatra'
 require 'rspec'
 require 'rack/test'
