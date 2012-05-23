@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'couchrest'
+require 'couchrest_model'
 require 'haml'
 require 'ostruct'
 
