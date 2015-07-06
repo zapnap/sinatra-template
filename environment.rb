@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'dotenv'
 require 'dm-core'
 require 'dm-timestamps'
 require 'dm-validations'
@@ -8,6 +9,8 @@ require 'dm-migrations'
 require 'ostruct'
 
 require 'sinatra' unless defined?(Sinatra)
+
+Dotenv.load
 
 configure do
   SiteConfig = OpenStruct.new(

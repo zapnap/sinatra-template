@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rspec/core/rake_task'
+require 'dotenv/tasks'
 
 task :default => :test
 task :test => :spec
@@ -14,7 +15,7 @@ else
   end
 end
 
-task :environment do
+task :environment => :dotenv do
   require File.join(File.dirname(__FILE__), 'environment')
 end
 

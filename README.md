@@ -14,6 +14,9 @@ are placed in the <tt>views</tt> directory. Static files, including a stock
 stylesheet, go in the <tt>public</tt> directory. Models go in the <tt>lib</tt>
 directory and are auto-loaded.
 
+Environment variables that you want to expose to your application can be added
+in <tt>.env</tt>
+
 ## Testing
 
 Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to
