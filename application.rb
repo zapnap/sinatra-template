@@ -1,7 +1,6 @@
 require "rubygems"
 require "bundler/setup"
 require "sinatra"
-require "logger"
 require File.join(File.dirname(__FILE__), "environment")
 
 configure do
@@ -19,7 +18,6 @@ end
 
 # root page
 get "/" do
-  logger.info "logger"
   @profiles = Profile.all
   erb :root
 end

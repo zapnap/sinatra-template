@@ -7,12 +7,10 @@ describe 'main application' do
     Sinatra::Application.new
   end
 
-  specify 'should show the default index page' do
+  it 'shows the default index page' do
     get '/'
-    last_response.should be_ok
+    expect(last_response).to be_ok
   end
 
-  specify 'should have more specs' do
-    pending
-  end
+  it 'should have more specs'
 end

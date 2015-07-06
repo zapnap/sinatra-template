@@ -5,13 +5,13 @@ describe 'profile' do
     @profile = Profile.new(:name => 'test user')
   end
 
-  specify 'should be valid' do
-    @profile.should be_valid
+  it 'is valid' do
+    expect(@profile).to be_valid
   end
 
-  specify 'should require a name' do
+  it 'it requires a name' do
     @profile = Profile.new
-    @profile.should_not be_valid
-    @profile.errors[:name].should include("Name must not be blank")
+    expect(@profile).to_not be_valid
+    expect(@profile.errors[:name]).to include("Name must not be blank")
   end
 end
