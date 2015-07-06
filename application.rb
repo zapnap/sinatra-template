@@ -1,16 +1,16 @@
-require 'rubygems'
-require 'bundler/setup'
-require 'sinatra'
-require File.join(File.dirname(__FILE__), 'environment')
+require "rubygems"
+require "bundler/setup"
+require "sinatra"
+require "logger"
+require File.join(File.dirname(__FILE__), "environment")
 
 configure do
   set :views, "#{File.dirname(__FILE__)}/views"
+  set :show_exceptions, :after_handler
 end
 
-error do
-  e = request.env['sinatra.error']
-  Kernel.puts e.backtrace.join("\n")
-  'Application error'
+configure :production, :development do
+  enable :logging
 end
 
 helpers do
@@ -18,6 +18,8 @@ helpers do
 end
 
 # root page
-get '/' do
-  haml :root
+get "/" do
+  logger.info "logger"
+  @profiles = Profile.all
+  erb :root
 end

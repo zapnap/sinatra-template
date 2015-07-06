@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title || SiteConfig.title %></title>
+    <link href="/main.css" rel="stylesheet" type="text/css"></link>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="logo">
+          <h1>
+            <a href="/"><%= SiteConfig.title %></a>
+            </h1>
+        </div>
+      </div>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <p class="legal">&mdash; &copy; <%= Time.now.strftime("%Y") %> <%= SiteConfig.author %> &mdash;</p>
+      </div>
+    </div>
+  </body>
+</html>
