@@ -3,7 +3,7 @@
 A base Sinatra application template. Just fork and build. Yay!
 Includes Bundler, DataMapper, and RSpec, all ready to go.
 
-== Configuration
+## Configuration
 
 Dependencies and all configuration is done in <tt>environment.rb</tt>. Your
 database is also set up here. DataMapper will use sqlite3 by default. Tests
@@ -14,7 +14,7 @@ are placed in the <tt>views</tt> directory. Static files, including a stock
 stylesheet, go in the <tt>public</tt> directory. Models go in the <tt>lib</tt>
 directory and are auto-loaded.
 
-== Testing
+## Testing
 
 Add your specs in <tt>spec</tt>; just require <tt>spec_helper.rb</tt> to
 pre-configure the test environment. A number of samples are provided (including
@@ -22,19 +22,19 @@ a sample model, which can be removed). To run the specs:
 
     bundle exec rake spec
 
-== Getting Started
+## Getting Started
 
     bundle install
     bundle exec foreman start
 
-== Extras
+## Extras
 
 We've included a handy <tt>console</tt> script that fires up irb with your
 environment loaded. To load it, use the Rake task:
 
     bundle exec rake console
 
-== Thanks
+## Thanks
 
 This project includes contributions from [several awesome developers](https://github.com/zapnap/sinatra-template/graphs/contributors).
 
